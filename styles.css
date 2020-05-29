@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+:root {
+    --leading: 1.8em; /* -- means its a custom property */
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+.hero-bg {
+    margin:0;
+    background: #307D99 url(bg.jpg);
+    background-position: 12% 83%; /* to move the background image in x and y coordinates */
+    color: white;
+    text-align: center; /* this does it from all sides */ /*em is the relative size unit */
+    padding-bottom: 4em;
+}
+.hero-bg a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+a {
+    text-decoration: none;
+}
+header {
+    padding: 1em 0;
+}
+.right-col {
+    margin: 0 1em;
+}
+h1 {
+    font-size:2.5rem;
+}
+h2 {
+    font-size:1.8rem;
+}
+nav {
+    margin: 0;
+    padding: 0;
+}
+h1 span {
+    text-transform: uppercase;
+    display: block;
+    font-size:1.4rem;
+    position: relative;
+    z-index: 1; /* for 3d art */
+}
+h1 span::before {
+    content:' ';
+    position: absolute;
+    width: 3em;
+    background: #00BFFF;
+    height: 0.4em;
+    bottom:0;
+    z-index: -1; /* for 3d art */
+}
+.hero-bg p {
+    font-weight: bold;
+    margin: 0 1.5em 3em 1.5em;
+}
+.form-container {
+    background-color: white;
+    margin: 2em -1em 0; /* -1em because we need it to overflow into the section and be white completely */
+    padding: 2em;
+}
+label {
+    color: #2d7d98;
+    font-weight: bold;
+    display: block; /* when you dont want anything floating left or right to it */
+    margin-bottom: 1em;
+    font-size: 1.2rem; /* default is 1em */
+}
+input[type=text] {
+    border: 1px solid #707070;
+    width: 100%;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 0.5em;
+}
+.form-container p {
+    color: gray;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 0.3em;
+}
+input[type=button] {
+    background-color: #f89104;
+    border: none;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    padding: 1em 0;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+input[type=button]:hover {
+    background-color: rgb(216, 126, 1);
+}
+.authentic {
+    margin: 0;
+}
+.right-col {
+    text-align: center;
+    margin: 3em 1em;
+    font-weight: lighter;
+}
+h2 {
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1; /* for 3d art */
+}
+h2::before {
+    content:' ';
+    position: absolute;
+    width: 8em;
+    background: #00BFFF;
+    height: 0.4em;
+    bottom:0;
+    z-index: -1; /* for 3d art */
+}
+img {
+    width: 100%; /* makes it responsive */
+}
+p {
+    line-height: var(--leading);
+}
+@media (min-width: 730px) /* when you do mobile first, you use min-width; when you do desktop first, you use max-width */
+{
+    section {
+        margin: 0 4em;
+    }
+}
+@media (min-width:930px) {
+    .hero-bg {
+        text-align: left; 
+    }
+    .hero-bg p {
+        margin: 0 0 3em;
+    }
+    .hero-bg section {
+        width: 65%;
+    }
+    .form-container {
+        margin: 2em 0 0;
+        padding: 2em;
+        border-radius: 0.5em;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3); /* cool shadow effeect seen in multiple boxes in portfolio websites */
+    }
+    form {
+        display: flex; 
+    }
+    .form-left {
+        width: 70%;
+    }
+    label {
+        margin: 0;
+    }
+    input[type=button]{
+        height: fit-content;
+        font-size: 1.1em;
+        margin-left: 1em;
+        margin-top: 1.8em;
+        padding: 0.7em 0;
+        width: 30%;
+    }
+    .hero-bg {
+        margin-bottom: 0;
+    }
+    .main-body {
+        display: grid; /* super cool feature, totally use it in the future */
+        grid-template-columns: repeat(2, 50%);
+    }
+    section.authentic {
+        padding: 0 10%;
+        text-align: left;
+        align-self: center; /* important */
+    }
+}
+
+.top {
+    animation: fadeIn 2s forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0em);
+    }
+}
